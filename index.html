@@ -26,20 +26,19 @@ body {
   padding: 20px;
 }
 
-/* Çok Daha Şeffaf ve Arkası Net Görünen Cam Çerçeve */
+/* Son Güncelleme: Bulanıklık kaldırıldı, sadece cam şeffaflığı kaldı */
 .phone-mockup {
   position: relative;
   width: 100%;
   max-width: 350px;
-  background: rgba(0, 0, 0, 0.15); /* Çok yüksek şeffaflık */
-  backdrop-filter: blur(6px);       /* Hafif buzlu cam efekti */
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.15); /* Sadece çok hafif koyu renkli şeffaf cam */
+  /* backdrop-filter: blur(8px);       <-- BU SATIR SİLİNDİ (Bulanıklık kalktı) */
   border: 1.5px solid rgba(255, 255, 255, 0.35); 
   border-radius: 35px;
   padding: 40px 25px;
   text-align: center;
   color: white;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -48,7 +47,7 @@ h1 {
   letter-spacing: 1px;
   margin-bottom: 5px;
   text-transform: uppercase;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8); /* Yazıların okunması için gölge eklendi */
 }
 
 h2 {
@@ -56,7 +55,7 @@ h2 {
   font-weight: 300;
   margin-bottom: 25px;
   opacity: 0.95;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 .btn {
@@ -85,7 +84,7 @@ h2 {
   margin-top: 20px;
   font-size: 12px;
   opacity: 0.95;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 </style>
 </head>
@@ -95,17 +94,14 @@ h2 {
     <h1>BERFU BOAT</h1>
     <h2>ÖZER YİĞİTCAN</h2>
 
-    <!-- Google Yorum Linki (Eğer açılmazsa Google Haritalardaki işletme sayfanızın linkini buraya yapıştırabilirsiniz) -->
     <a class="btn google" href="https://maps.app.goo.gl/..." target="_blank">
         ⭐ Google'da Bizi Değerlendirin
     </a>
 
-    <!-- Instagram Butonu -->
     <a class="btn instagram" href="https://www.instagram.com/berfuboat" target="_blank">
         📸 Instagram Profilini Keşfedin
     </a>
 
-    <!-- WhatsApp Butonu -->
     <a class="btn whatsapp" href="https://wa.me/905326511505" target="_blank">
         💬 WhatsApp Hızlı Rezervasyon
     </a>
