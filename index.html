@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>BERFU BOAT</title>
 
 <!-- Font Ailesi -->
@@ -15,197 +15,109 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Poppins,sans-serif;
+-webkit-tap-highlight-color: transparent; /* Mobil tarayıcılar için tıklama vurgusunu kaldır */
 }
 
-/* Arka Plan Ayarı (Verilen görsel ile eşleştirildi) */
+/* Sayfa Genel Ayarları (Koyu gri bir arka plan, görselle uyumlu) */
 body{
-background:url("image_0.png") center center/cover no-repeat;
+background-color: #1a1a1a; /* Görselin dışındaki koyu alan */
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:20px;
-overflow:hidden; /* Taşan kısımları gizle */
+padding: 20px;
+overflow:hidden;
 }
 
-/* İçerik Kartı (Şeffaf ve Konumlandırılmış) */
-.card{
+/* Mobil Ekran Görünümü Veren Ana Konteyner */
+.mockup-container{
 position:relative;
-z-index:2;
-width:100%;
-max-width:360px; /* Görseldeki kart genişliğiyle uyumlu */
-background:rgba(255,255,255,.15); /* Daha şeffaf bir arka plan */
-backdrop-filter:blur(20px); /* Daha belirgin bulanıklık */
-border:1px solid rgba(255,255,255,.3);
-border-radius:30px; /* Daha yumuşak köşeler */
-padding:40px 25px;
+width: 100%;
+max-width: 350px; /* Görseldeki kartın yaklaşık genişliği */
+height: 750px; /* Görseldeki kartın yaklaşık yüksekliği */
+background: url('image_0.png') center center / contain no-repeat; /* Arka plan görselini (telefon ekranı) buraya koyuyoruz */
+display: flex;
+justify-content: center;
+align-items: flex-start; /* İçeriği yukarıdan hizala */
+padding-top: 210px; /* İçeriği telefon ekranının üst kısmına göre aşağı kaydır (Görselden ölçüldü) */
+}
+
+/* Şeffaf İçerik Kartı (Görseldeki yarı saydam katman) */
+.app-card{
+width: 85%; /* Telefon ekranı içindeki genişlik oranı */
+background: rgba(255,255,255,.07); /* Çok hafif şeffaf beyaz */
+backdrop-filter:blur(25px); /* Bulanıklık efekti */
+border:1px solid rgba(255,255,255,.1);
+border-radius:35px; /* Görseldeki gibi yuvarlak köşeler */
+padding: 40px 20px;
 text-align:center;
 color:white;
-box-shadow:0 15px 40px rgba(0,0,0,.3);
-margin-top: 15vh; /* Görseldeki gibi kartı biraz aşağı kaydır */
+box-shadow:0 10px 40px rgba(0,0,0,.5); /* Belirgin gölge */
 }
 
-/* Logo Yeri (Görseldeki boş alana uygun olarak kaldırıldı, sadece metin kaldı) */
-
+/* Başlıklar */
 h1{
-font-size:32px;
+font-size:28px;
 font-weight:700;
 letter-spacing:1px;
-margin-bottom: 5px;
+margin-bottom: 2px;
 text-transform: uppercase;
 }
 
 h2{
-font-size:16px;
+font-size:14px;
 font-weight:300;
-margin-bottom: 35px; /* Başlık ve butonlar arası boşluk */
-opacity:.9;
+margin-bottom: 35px;
+opacity:.8;
 letter-spacing: 0.5px;
 }
 
-/* Buton Stilleri (Görseldeki renkler ve simgelerle uyumlu) */
+/* Buton Stilleri (Görseldeki gibi renkler ve simgeler) */
 .btn{
 display:flex;
 align-items:center;
 justify-content:center;
 width:100%;
-padding:16px 20px;
-margin:12px 0;
+padding: 14px 20px;
+margin: 12px 0;
 text-decoration:none;
-border-radius:12px;
-font-size:16px;
+border-radius:15px; /* Buton köşe yumuşaklığı */
+font-size:15px;
 font-weight:600;
 color:white;
-transition: transform 0.2s ease; /* Hafif hover efekti */
+transition: transform 0.1s ease, opacity 0.2s ease;
 }
 
-.btn:hover{
-transform: translateY(-2px);
+.btn:active{
+transform: scale(0.97); /* Tıklama efekti */
+opacity: 0.9;
 }
 
-/* Buton Simgeleri (Emoji yerine Unicode veya doğrudan metin içi karakterler) */
+/* Google Butonu */
 .google{
 background:#4285F4;
 }
 .google::before{
-content: 'G'; /* Google logosunu temsil eden harf */
-font-size: 1.2em;
-margin-right: 10px;
-font-weight: bold;
+content: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M9 3.48c1.69 0 3.21.58 4.41 1.59l3.3-3.3C14.59.98 11.9 0 9 0 5.53 0 2.48 2.04.99 5.08l3.82 2.95C5.75 4.96 7.24 3.48 9 3.48z" fill="%23fff"/><path d="M17.64 9.2c0-.59-.07-1.15-.19-1.7H9v3.3h4.87c-.21 1.15-.9 2.12-1.86 2.77v2.2h2.9c1.7-1.57 2.73-3.88 2.73-6.57z" fill="%23fff"/><path d="M4.81 10.88c-.45-1.35-.45-2.82 0-4.17L.99 3.76C-.34 6.39-.34 9.66.99 12.29l3.82-1.41z" fill="%23fff"/><path d="M9 17.52c2.69 0 4.99-.91 6.65-2.46l-2.93-2.22c-.82.57-1.87.89-3.72.89-1.76 0-3.25-1.19-3.78-2.82l-3.82 1.44C2.48 15.46 5.53 17.52 9 17.52z" fill="%23fff"/></svg>'); /* Google logosu SVGsini direkt kullandık */
+margin-right: 12px;
+display: flex;
+align-items: center;
 }
 
+/* Instagram Butonu */
 .instagram{
-background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); /* Daha modern bir Instagram gradienti */
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
 }
 .instagram::before{
-content: '📸'; /* Instagram simgesi */
-margin-right: 10px;
+content: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.235.057 2.088.24 2.824.527.765.297 1.414.693 2.062 1.342.649.648 1.045 1.297 1.342 2.062.287.736.47 1.589.526 2.824.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.057 1.235-.24 2.088-.527 2.824-.297.765-.693 1.414-1.342 2.062-.648.649-1.297 1.045-2.062.1342-.736.287-1.589.47-2.824.526-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.235-.057-2.088-.24-2.824-.527-.765-.297-1.414-.693-2.062-1.342-.649-.648-1.045-1.297-1.342-2.062-.287-.736-.47-1.589-.526-2.824-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.057-1.235.24-2.088.527-2.824.297-.765.693-1.414 1.342-2.062.649-.649 1.297-1.045 2.062-1.342.736-.287 1.589-.47 2.824-.526 1.266-.058 1.646-.07 4.85-.07zm0 1.583c-3.15 0-3.522.011-4.764.068-1.135.052-1.898.223-2.567.488-.693.268-1.277.633-1.861 1.217-.584.584-.948 1.168-1.217 1.861-.266.669-.437 1.432-.488 2.567-.057 1.242-.068 1.614-.068 4.764s.011 3.522.068 4.764c.052 1.135.223 1.898.488 2.567.268.693.633 1.277 1.217 1.861.584.584 1.168.948 1.861 1.217.669.266 1.432.437 2.567.488 1.242.057 1.614.068 4.764.068s3.522-.011 4.764-.068c1.135-.052 1.898-.223 2.567-.488.693-.268 1.277-.633 1.861-1.217.584-.584.948-1.168 1.217-1.861.266-.669.437-1.432.488-2.567.057-1.242.068-1.614.068-4.764s-.011-3.522-.068-4.764c-.052-1.135-.223-1.898-.488-2.567-.268-.693-.633-1.277-1.217-1.861-.584-.584-.1168-.948-1.861-1.217-.669-.266-1.432-.437-2.567-.488-1.242-.057-1.614-.068-4.764-.068zm0 3.436c4.541 0 8.217 3.676 8.217 8.217 0 4.541-3.676 8.217-8.217 8.217-4.541 0-8.217-3.676-8.217-8.217 0-4.541 3.676-8.217 8.217-8.217zm0 1.583c-3.667 0-6.634 2.967-6.634 6.634 0 3.667 2.967 6.634 6.634 6.634 3.667 0 6.634-2.967 6.634-6.634 0-3.667-2.967-6.634-6.634-6.634zm7.078-5.905c0 .813-.659 1.472-1.472 1.472-.813 0-1.472-.659-1.472-1.472 0-.813.659-1.472 1.472-1.472.813 0 1.472.659 1.472 1.472z" fill="%23fff"/></svg>'); /* Instagram logosu SVGsini direkt kullandık */
+margin-right: 12px;
+display: flex;
+align-items: center;
 }
 
+/* WhatsApp Butonu */
 .whatsapp{
 background:#25D366;
 }
 .whatsapp::before{
-content: '⚓'; /* WhatsApp için çapa simgesi */
-margin-right: 10px;
-font-size: 1.1em;
-}
-
-/* Alt Metinler ve Konum */
-.details-text {
-margin-top: 25px;
-font-size: 15px;
-opacity: .9;
-line-height: 1.4;
-}
-
-.nfc-icon{
-margin-top: 15px;
-margin-bottom: 15px;
-font-size: 30px;
-opacity: .6;
-}
-
-.footer-link{
-margin-top: 10px;
-font-size: 12px;
-opacity: .7;
-text-decoration: none;
-color: white;
-display: block;
-}
-
-/* Tahta Zemin (Görselin altındaki tahta detayı için ekleme) */
-.tahta-zemin {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10vh; /* Görselin altındaki tahta şerit */
-    background: url('image_0.png') center bottom/cover no-repeat;
-    clip-path: inset(90% 0 0 0); /* Sadece görselin en altını göster */
-    z-index: 1;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<!-- Tahta Zemin (Arka planın en altında) -->
-<div class="tahta-zemin"></div>
-
-<!-- Ana İçerik Kartı -->
-<div class="card">
-    <!-- Logo kaldırıldı, doğrudan başlığa geçildi -->
-    <h1>BERFU BOAT</h1>
-    <h2>ÖZER YİĞİTCAN</h2>
-
-    <!-- Google Değerlendirme Butonu -->
-    <a class="btn google"
-    href="https://search.google.com/local/writereview?placeid=ChI..." 
-    target="_blank">
-    Google'da Bizi Değerlendirin
-    </a>
-
-    <!-- Instagram Profili Butonu -->
-    <a class="btn instagram"
-    href="https://www.instagram.com/berfuboat" 
-    target="_blank">
-    Instagram Profilini Keşfedin
-    </a>
-
-    <!-- WhatsApp Hızlı Rezervasyon 1 Butonu -->
-    <a class="btn whatsapp"
-    href="https://wa.me/905326511505" 
-    target="_blank">
-    WhatsApp Hızlı Rezervasyon
-    </a>
-
-    <!-- WhatsApp Hızlı Rezervasyon 2 Butonu (Görselde tek WhatsApp butonu vardı, isterseniz bu kısmı açabilirsiniz) -->
-    <!--
-    <a class="btn whatsapp"
-    href="https://wa.me/905434300159" 
-    target="_blank">
-    💬 WhatsApp - 0543 430 01 59
-    </a>
-    -->
-
-    <!-- Alt Bilgiler -->
-    <div class="details-text">
-        Dalyan, Türkiye Tekne Turları
-    </div>
-
-    <div class="nfc-icon">
-        (( NFC ))
-    </div>
-
-    <a href="https://berfuboat.github.io/qr" class="footer-link" target="_blank">
-        https://berfuboat.github.io/qr
-    </a>
-
-</div>
-
-</body>
-</html>
+content: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.148-.174.197-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.206-.242-.579-.487-.5-.669
