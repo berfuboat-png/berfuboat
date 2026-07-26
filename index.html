@@ -26,20 +26,20 @@ body {
   padding: 20px;
 }
 
-/* Şeffaf ve Arkası Görünen Buzlu Cam Çerçeve */
+/* Çok Daha Şeffaf ve Arkası Net Görünen Cam Çerçeve */
 .phone-mockup {
   position: relative;
   width: 100%;
   max-width: 350px;
-  background: rgba(0, 0, 0, 0.25); /* Daha şeffaf arka plan */
-  backdrop-filter: blur(8px);       /* Arkadakini gösteren bulanıklık efekti */
-  -webkit-backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 255, 255, 0.4); /* Zarif ince çerçeve */
+  background: rgba(0, 0, 0, 0.15); /* Çok yüksek şeffaflık */
+  backdrop-filter: blur(6px);       /* Hafif buzlu cam efekti */
+  -webkit-backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(255, 255, 255, 0.35); 
   border-radius: 35px;
   padding: 40px 25px;
   text-align: center;
   color: white;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -48,7 +48,7 @@ h1 {
   letter-spacing: 1px;
   margin-bottom: 5px;
   text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
 }
 
 h2 {
@@ -56,7 +56,7 @@ h2 {
   font-weight: 300;
   margin-bottom: 25px;
   opacity: 0.95;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
 .btn {
@@ -71,7 +71,7 @@ h2 {
   font-size: 14px;
   font-weight: 600;
   color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: opacity 0.2s;
 }
 
@@ -85,7 +85,7 @@ h2 {
   margin-top: 20px;
   font-size: 12px;
   opacity: 0.95;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 </style>
 </head>
@@ -95,8 +95,8 @@ h2 {
     <h1>BERFU BOAT</h1>
     <h2>ÖZER YİĞİTCAN</h2>
 
-    <!-- Çalışan Google Yorum Linki -->
-    <a class="btn google" href="https://g.page/r/CU9_v9x_.../review" target="_blank">
+    <!-- Google Yorum Linki (Eğer açılmazsa Google Haritalardaki işletme sayfanızın linkini buraya yapıştırabilirsiniz) -->
+    <a class="btn google" href="https://maps.app.goo.gl/..." target="_blank">
         ⭐ Google'da Bizi Değerlendirin
     </a>
 
