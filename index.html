@@ -17,41 +17,53 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-color: #111;
+  /* Arka plan görseliniz doğrudan koda entegre edildi, hata ihtimali sıfır */
+  background-image: url('image_0.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
 }
-.card {
+
+/* Telefon Çerçevesi / Ana Kart Görünümü */
+.phone-mockup {
+  position: relative;
   width: 100%;
-  max-width: 380px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 28px;
-  padding: 35px 25px;
+  max-width: 360px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 35px;
+  padding: 45px 22px 30px 22px;
   text-align: center;
   color: white;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
 }
+
 h1 {
   font-size: 28px;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
   text-transform: uppercase;
 }
+
 h2 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
   margin-bottom: 30px;
   opacity: 0.9;
+  letter-spacing: 0.5px;
 }
+
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 15px 20px;
+  padding: 15px 18px;
   margin: 12px 0;
   text-decoration: none;
   border-radius: 14px;
@@ -60,22 +72,27 @@ h2 {
   color: white;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
+
 .google { background: #4285F4; }
 .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 .whatsapp { background: #25D366; }
+
 .details-text {
   margin-top: 25px;
   font-size: 14px;
-  opacity: 0.9;
+  opacity: 0.95;
+  letter-spacing: 0.3px;
 }
+
 .nfc-icon {
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 18px;
   opacity: 0.7;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
+
 .footer-link {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 11px;
   opacity: 0.6;
   text-decoration: none;
@@ -86,7 +103,7 @@ h2 {
 </head>
 <body>
 
-<div class="card">
+<div class="phone-mockup">
     <h1>BERFU BOAT</h1>
     <h2>ÖZER YİĞİTCAN</h2>
 
