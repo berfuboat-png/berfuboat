@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BERFU BOAT</title>
 
+<!-- Font Ailesi -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* Genel Sıfırlama */
 *{
 margin:0;
 padding:0;
@@ -15,135 +17,193 @@ box-sizing:border-box;
 font-family:Poppins,sans-serif;
 }
 
+/* Arka Plan Ayarı (Verilen görsel ile eşleştirildi) */
 body{
-background:url("background.jpg") center center/cover no-repeat;
+background:url("image_0.png") center center/cover no-repeat;
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 padding:20px;
+overflow:hidden; /* Taşan kısımları gizle */
 }
 
-.overlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.45);
-}
-
+/* İçerik Kartı (Şeffaf ve Konumlandırılmış) */
 .card{
 position:relative;
 z-index:2;
 width:100%;
-max-width:420px;
-background:rgba(0,0,0,.45);
-backdrop-filter:blur(14px);
-border:1px solid rgba(255,255,255,.18);
-border-radius:28px;
-padding:30px 25px;
+max-width:360px; /* Görseldeki kart genişliğiyle uyumlu */
+background:rgba(255,255,255,.15); /* Daha şeffaf bir arka plan */
+backdrop-filter:blur(20px); /* Daha belirgin bulanıklık */
+border:1px solid rgba(255,255,255,.3);
+border-radius:30px; /* Daha yumuşak köşeler */
+padding:40px 25px;
 text-align:center;
 color:white;
-box-shadow:0 20px 45px rgba(0,0,0,.35);
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+margin-top: 15vh; /* Görseldeki gibi kartı biraz aşağı kaydır */
 }
 
-.logo{
-width:95px;
-height:95px;
-margin:auto;
-margin-bottom:15px;
-border-radius:50%;
-background:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:42px;
-}
+/* Logo Yeri (Görseldeki boş alana uygun olarak kaldırıldı, sadece metin kaldı) */
 
 h1{
-font-size:34px;
+font-size:32px;
 font-weight:700;
-letter-spacing:2px;
+letter-spacing:1px;
+margin-bottom: 5px;
+text-transform: uppercase;
 }
 
 h2{
-font-size:18px;
+font-size:16px;
 font-weight:300;
-margin-top:5px;
-margin-bottom:28px;
-opacity:.95;
+margin-bottom: 35px; /* Başlık ve butonlar arası boşluk */
+opacity:.9;
+letter-spacing: 0.5px;
 }
 
+/* Buton Stilleri (Görseldeki renkler ve simgelerle uyumlu) */
 .btn{
-display:block;
+display:flex;
+align-items:center;
+justify-content:center;
 width:100%;
-padding:17px;
-margin:14px 0;
+padding:16px 20px;
+margin:12px 0;
 text-decoration:none;
-border-radius:15px;
-font-size:17px;
+border-radius:12px;
+font-size:16px;
 font-weight:600;
 color:white;
+transition: transform 0.2s ease; /* Hafif hover efekti */
 }
 
+.btn:hover{
+transform: translateY(-2px);
+}
+
+/* Buton Simgeleri (Emoji yerine Unicode veya doğrudan metin içi karakterler) */
 .google{
 background:#4285F4;
 }
+.google::before{
+content: 'G'; /* Google logosunu temsil eden harf */
+font-size: 1.2em;
+margin-right: 10px;
+font-weight: bold;
+}
 
 .instagram{
-background:linear-gradient(90deg,#833AB4,#E1306C,#FCAF45);
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); /* Daha modern bir Instagram gradienti */
+}
+.instagram::before{
+content: '📸'; /* Instagram simgesi */
+margin-right: 10px;
 }
 
 .whatsapp{
 background:#25D366;
 }
-
-.footer{
-margin-top:28px;
-font-size:15px;
-opacity:.9;
+.whatsapp::before{
+content: '⚓'; /* WhatsApp için çapa simgesi */
+margin-right: 10px;
+font-size: 1.1em;
 }
+
+/* Alt Metinler ve Konum */
+.details-text {
+margin-top: 25px;
+font-size: 15px;
+opacity: .9;
+line-height: 1.4;
+}
+
+.nfc-icon{
+margin-top: 15px;
+margin-bottom: 15px;
+font-size: 30px;
+opacity: .6;
+}
+
+.footer-link{
+margin-top: 10px;
+font-size: 12px;
+opacity: .7;
+text-decoration: none;
+color: white;
+display: block;
+}
+
+/* Tahta Zemin (Görselin altındaki tahta detayı için ekleme) */
+.tahta-zemin {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh; /* Görselin altındaki tahta şerit */
+    background: url('image_0.png') center bottom/cover no-repeat;
+    clip-path: inset(90% 0 0 0); /* Sadece görselin en altını göster */
+    z-index: 1;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="overlay"></div>
+<!-- Tahta Zemin (Arka planın en altında) -->
+<div class="tahta-zemin"></div>
 
+<!-- Ana İçerik Kartı -->
 <div class="card">
+    <!-- Logo kaldırıldı, doğrudan başlığa geçildi -->
+    <h1>BERFU BOAT</h1>
+    <h2>ÖZER YİĞİTCAN</h2>
 
-<div class="logo">🚤</div>
+    <!-- Google Değerlendirme Butonu -->
+    <a class="btn google"
+    href="https://search.google.com/local/writereview?placeid=ChI..." 
+    target="_blank">
+    Google'da Bizi Değerlendirin
+    </a>
 
-<h1>BERFU BOAT</h1>
+    <!-- Instagram Profili Butonu -->
+    <a class="btn instagram"
+    href="https://www.instagram.com/berfuboat" 
+    target="_blank">
+    Instagram Profilini Keşfedin
+    </a>
 
-<h2>ÖZER YİĞİTCAN</h2>
+    <!-- WhatsApp Hızlı Rezervasyon 1 Butonu -->
+    <a class="btn whatsapp"
+    href="https://wa.me/905326511505" 
+    target="_blank">
+    WhatsApp Hızlı Rezervasyon
+    </a>
 
-<a class="btn google"
-href="https://search.google.com/local/writereview?placeid=ChI..."
-target="_blank">
-⭐ Google'da Bizi Değerlendirin
-</a>
+    <!-- WhatsApp Hızlı Rezervasyon 2 Butonu (Görselde tek WhatsApp butonu vardı, isterseniz bu kısmı açabilirsiniz) -->
+    <!--
+    <a class="btn whatsapp"
+    href="https://wa.me/905434300159" 
+    target="_blank">
+    💬 WhatsApp - 0543 430 01 59
+    </a>
+    -->
 
-<a class="btn instagram"
-href="https://www.instagram.com/berfuboat"
-target="_blank">
-📸 Instagram Profilini Keşfedin
-</a>
+    <!-- Alt Bilgiler -->
+    <div class="details-text">
+        Dalyan, Türkiye Tekne Turları
+    </div>
 
-<a class="btn whatsapp"
-href="https://wa.me/905326511505"
-target="_blank">
-💬 WhatsApp - 0532 651 15 05
-</a>
+    <div class="nfc-icon">
+        (( NFC ))
+    </div>
 
-<a class="btn whatsapp"
-href="https://wa.me/905434300159"
-target="_blank">
-💬 WhatsApp - 0543 430 01 59
-</a>
-
-<div class="footer">
-📍 Dalyan / Muğla
-</div>
+    <a href="https://berfuboat.github.io/qr" class="footer-link" target="_blank">
+        https://berfuboat.github.io/qr
+    </a>
 
 </div>
 
