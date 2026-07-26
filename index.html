@@ -20,27 +20,26 @@ body {
   align-items: center;
   background-color: #0b0b0b;
   background-image: url('arkaplan.jpg');
-  /* Fotoğrafın orantılı ve düzgün durması için ayarlandı */
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 20px;
 }
 
-/* Şeffaf Kart Tasarımı */
+/* Şeffaf ve Arkası Görünen Buzlu Cam Çerçeve */
 .phone-mockup {
   position: relative;
   width: 100%;
   max-width: 350px;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 40px;
+  background: rgba(0, 0, 0, 0.25); /* Daha şeffaf arka plan */
+  backdrop-filter: blur(8px);       /* Arkadakini gösteren bulanıklık efekti */
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.4); /* Zarif ince çerçeve */
+  border-radius: 35px;
   padding: 40px 25px;
   text-align: center;
   color: white;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 h1 {
@@ -49,13 +48,15 @@ h1 {
   letter-spacing: 1px;
   margin-bottom: 5px;
   text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 h2 {
   font-size: 12px;
   font-weight: 300;
   margin-bottom: 25px;
-  opacity: 0.9;
+  opacity: 0.95;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 .btn {
@@ -71,7 +72,10 @@ h2 {
   font-weight: 600;
   color: white;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: opacity 0.2s;
 }
+
+.btn:active { opacity: 0.85; }
 
 .google { background: #4285F4; }
 .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -80,7 +84,8 @@ h2 {
 .details-text {
   margin-top: 20px;
   font-size: 12px;
-  opacity: 0.9;
+  opacity: 0.95;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -90,14 +95,17 @@ h2 {
     <h1>BERFU BOAT</h1>
     <h2>ÖZER YİĞİTCAN</h2>
 
-    <a class="btn google" href="https://search.google.com/local/writereview?placeid=ChI..." target="_blank">
+    <!-- Çalışan Google Yorum Linki -->
+    <a class="btn google" href="https://g.page/r/CU9_v9x_.../review" target="_blank">
         ⭐ Google'da Bizi Değerlendirin
     </a>
 
+    <!-- Instagram Butonu -->
     <a class="btn instagram" href="https://www.instagram.com/berfuboat" target="_blank">
         📸 Instagram Profilini Keşfedin
     </a>
 
+    <!-- WhatsApp Butonu -->
     <a class="btn whatsapp" href="https://wa.me/905326511505" target="_blank">
         💬 WhatsApp Hızlı Rezervasyon
     </a>
